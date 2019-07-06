@@ -128,7 +128,7 @@ class CreateBorrow extends React.Component{
 
                 <FormGroup controlId="formCategory">
                     <FormLabel>Book:</FormLabel>
-                    <FormControl as="select" defaultValue={null} onChange={this.handleChangeBook}>
+                    <FormControl as="select" onChange={this.handleChangeBook}>
                         {this.selectRowBook()}
                     </FormControl>
                 </FormGroup>

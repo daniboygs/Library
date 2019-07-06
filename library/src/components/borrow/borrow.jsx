@@ -11,8 +11,8 @@ class BorrowList extends React.Component{
   {
     super(props);
     this.state =  {
-        books: [],
-        users: [],
+        books: null,
+        users: null,
         borrows: [],
         categories: [],
         showCreate: false
@@ -58,9 +58,15 @@ class BorrowList extends React.Component{
   }
 
   handleShowCreate = () => {
-    this.setState({
-      showCreate: true
-    });
+    if(this.state.books.length >0 && this.state.users.length >0){
+      this.setState({
+        showCreate: true
+      });
+    }
+    else{
+      window.confirm('There are no books or users registered yet');
+    }
+    
   }
 
   handleDelete = (id_book) => {
